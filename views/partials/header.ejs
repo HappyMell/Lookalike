@@ -20,9 +20,11 @@
       <img class="bandlogo" src="/images/bandlogo.png"> </a>
     <div class="nav flex-sm-column flex-row">
       <li class="nav-item <%= typeof page !== 'undefined' && page === 'home' ? 'active' : '' %>">
-       <a class="nav-link active" href="/">NEWS</a>
+       <a class="nav-link" href="/">NEWS</a>
        </li>
+       <li class="nav-item <%= typeof page !== 'undefined' && page === 'discography' ? 'active' : '' %>">
         <a class="nav-link" href="/discography">DISCOGRAPHY</a>
+        </li>
             <a class="nav-link" href="#">LIVE</a>
                 <a class="nav-link" href="#">STORE</a>
                     <a class="nav-link" href="#">FOLLOW</a>

@@ -1,0 +1,22 @@
+<script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+
+<script>
+
+$(function() { 
+$('.collapse').on('hidden.bs.collapse', function(e) {
+  var $card = $(this).closest('.line');
+  $('html,body').animate({
+    scrollTop: $card.offset().top
+  }, 1000);
+});
+});
+
+$(function() {
+  $('.about-section').hide();
+  $('.description').click(function() {
+    $(this).closest('.content').siblings('.about-section').toggle(1000);
+  })
+})
+
+
+</script>

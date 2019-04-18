@@ -7,12 +7,12 @@ app.use(express.static(__dirname + "/public"));
 
 //Routes
 var homeRoute = require("./routes/home");
-var discographyRoute = require("./routes/discography");
+
 
 
 //Require routes from other files
 app.use("/", homeRoute);
-app.use("/discography", discographyRoute);
+app.use("/discography", homeRoute);
 
 
 
