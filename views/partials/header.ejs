@@ -27,7 +27,9 @@
         </li>
             <a class="nav-link" href="#">LIVE</a>
                 <a class="nav-link" href="#">STORE</a>
-                    <a class="nav-link" href="#">FOLLOW</a>
+                  <li class="nav-item <%= typeof page !== 'undefined' && page === 'follow' ? 'active' : '' %>">
+                    <a class="nav-link" href="/social-media">FOLLOW</a>
+                    </li>
 
 
 

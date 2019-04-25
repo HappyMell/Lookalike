@@ -14,4 +14,10 @@ router.get("/discography", function (req, res) {
     });
 });
 
+router.get("/social-media", function (req, res) {
+    res.render("follow", {
+        page: "follow"
+    });
+});
+
 module.exports = router;
