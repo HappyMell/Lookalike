@@ -29,8 +29,12 @@
 
                 
                  <li class="nav-item <%= typeof page !== 'undefined' && page === 'store' ? 'active' : '' %>">
-                <a class="nav-link" href="/store" >STORE</a>
-                
+                <a class="nav-link" data-toggle="collapse" href="#storeCollapse" aria-expanded="false" aria-controls="storeCollapse">STORE<i class="fa fa-plus"></i></a>
+                <div class="collapse" id="storeCollapse">
+                <a class="nav-link" href="#">Music</a>
+                <a class="nav-link" href="#">Clothing</a>
+                <a class="nav-link" href="#">Objects</a>
+                </div>
                 </li>
                 
                   <li class="nav-item <%= typeof page !== 'undefined' && page === 'follow' ? 'active' : '' %>">
@@ -43,3 +47,5 @@
 </nav>
 </div>
 
+
+<%include storecollapse%>
