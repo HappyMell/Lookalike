@@ -2,6 +2,9 @@ var express = require("express"),
     app = express();
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var fs = require('fs');
+var postcss = require('postcss');
+var atImport = require('postcss-import');
 
 
 //Mongoose config
@@ -16,6 +19,24 @@ app.use(bodyParser.urlencoded({
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+
+
+//Post CSS congig
+var css = fs.readFileSync("/Users/Mellisa/Desktop/Lookalike/public/css/style.css", "utf8");
+
+postcss()
+    .use(atImport())
+    .process(css, {
+        from: "public/css/style.css"
+    })
+    .then(function (result) {
+        var output = result.css
+        fs.writeFileSync("/Users/Mellisa/Desktop/Lookalike/public/css/finalstyle.css", result.css) // <-- need a different name to differentiate input css and the output from postcss
+        if (result.map) {
+            fs.writeFileSync('/Users/Mellisa/Desktop/Lookalike/public/css/finalstyle.css.map', result.map)
+        }
+    })
+
 
 //Routes
 var homeRoute = require("./routes/home");

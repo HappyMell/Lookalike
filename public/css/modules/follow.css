@@ -1,0 +1,23 @@
+/* Follow Page*/
+
+#followlist>li {
+    list-style: none;
+}
+
+#followlist>li>a {
+    color: black;
+    text-decoration: none;
+}
+
+#followlist>li>a:hover {
+    color: grey;
+}
+
+.newsletter-note {
+    font-size: 12px;
+}
+
+#fieldEmail {
+    background-color: black;
+    color: grey;
+}
