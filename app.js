@@ -31,6 +31,7 @@ postcss()
     })
     .then(function (result) {
         var output = result.css
+        console.log(output);
         fs.writeFileSync("/Users/Mellisa/Desktop/Lookalike/public/css/finalstyle.css", result.css) // <-- need a different name to differentiate input css and the output from postcss
         if (result.map) {
             fs.writeFileSync('/Users/Mellisa/Desktop/Lookalike/public/css/finalstyle.css.map', result.map)

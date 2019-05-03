@@ -14,7 +14,7 @@
 
 <div class="container-fluid">
 <div class="row">
-<div class="col-sm-2 col-md-2 col-lg-2 col-xl-1">
+
 <nav class="navbar fixed-top navbar-light bg-light">
  <a class="navbar-brand" href="/">
       <img class="bandlogo" src="/images/bandlogo.png"> </a>
@@ -25,21 +25,33 @@
        <li class="nav-item <%= typeof page !== 'undefined' && page === 'discography' ? 'active' : '' %>">
         <a class="nav-link" href="/discography">DISCOGRAPHY</a>
         </li>
-            <a class="nav-link" href="#">LIVE</a>
-
+        <li class="nav-item <%= typeof page !== 'undefined' && page === 'live' ? 'active' : '' %>">
+        <a class="nav-link" href="/live">LIVE</a>
+        </li>      
+        <li class="nav-item  <%= typeof page !== 'undefined' && page === 'store' ? 'active' : '' %>" >
                 
-                 <li class="nav-item <%= typeof page !== 'undefined' && page === 'store' ? 'active' : '' %>">
-                <a class="nav-link" href="/store" >STORE</a>
-                
+                <a class="nav-link" href="/store">STORE</a>
                 </li>
-                
+              
+                </li><img class="crossStore" src="images/cross.png" data-toggle="collapse" role="button" aria-expended="false" aria-controls="#storeCollapse" href="#storeCollapse" >
+                   
+                   <div class="collapse" id="storeCollapse">
+                   <ul>
+                   <li><a class="nav-link" href="/music">Music</a></li>
+                   <li><a class="nav-link" href="/clothing">Clothing</a></li>
+                   <li><a class="nav-link" href="/objects">Objects</a></li>
+                   </div>
+                  </li>
+                </ul>
+
                   <li class="nav-item <%= typeof page !== 'undefined' && page === 'follow' ? 'active' : '' %>">
                     <a class="nav-link" href="/social-media">FOLLOW</a>
                     </li>
 
 
 
-  </div>
+
 </nav>
 </div>
 
+<% include ../partials/storecollapse%>

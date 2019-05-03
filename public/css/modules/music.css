@@ -1,0 +1,10 @@
+#musicStatement {
+    font-family: 'Source Sans Pro';
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 152px;
+}
+
+.musicParagraph {
+    font-size: 13px;
+}

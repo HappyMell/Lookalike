@@ -1,0 +1,45 @@
+.shoppingBag {
+    margin-left: 35px !important;
+}
+
+.text-dark {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    transition: color 0.4s linear;
+    -webkit-transition: color 0.4s linear;
+    -moz-transition: color 0.4s linear;
+
+
+}
+
+a.text-dark:hover {
+    color: grey !important;
+    text-decoration: none;
+}
+
+.storeColumn {
+    margin-top: 60px !important;
+}
+
+.storeImage {
+    width: 100%;
+    height: 560;
+}
+
+#photoTop>a {
+    color: black;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 17px;
+    transition: color 0.4s linear;
+    -webkit-transition: color 0.4s linear;
+    -moz-transition: color 0.4s linear;
+}
+
+#photoTop>a:hover {
+    color: grey;
+    text-decoration: none;
+}

@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var Subscription = require("../models/subscribe");
+var Music = require("../models/music");
 
 //Root Route
 router.get("/", function (req, res) {
@@ -26,6 +27,15 @@ router.get("/social-media", function (req, res) {
 router.get("/store", function (req, res) {
     res.render("store", {
         page: "store"
+    })
+})
+
+//Store - Music
+router.get("/music", function (req, res) {
+    var music = Music.find();
+    res.render("music", {
+        page: "music",
+        music: music
     })
 })
 
