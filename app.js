@@ -99,7 +99,7 @@ app.use(function (req, res, next) {
 
 
 //Post CSS config
-var css = fs.readFileSync("/Users/Mellisa/Desktop/Lookalike/public/css/style.css", "utf8");
+var css = fs.readFileSync("../public/css/style.css", "utf8");
 
 postcss()
     .use(atImport())
@@ -109,7 +109,7 @@ postcss()
     .then(function (result) {
         var output = result.css
 
-        fs.writeFileSync("/Users/Mellisa/Desktop/Lookalike/public/css/finalstyle.css", result.css) // <-- need a different name to differentiate input css and the output from postcss
+        fs.writeFileSync("/Users/Mellisa/Desktop/Lookalike/public/css/finalstyle.css", result.css)
         if (result.map) {
             fs.writeFileSync('/Users/Mellisa/Desktop/Lookalike/public/css/finalstyle.css.map', result.map)
         }
