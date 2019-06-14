@@ -1,0 +1,38 @@
+<% include ../partials/header%>
+<% include ../partials/store/storeheader%>
+
+<div class="row accountRow">
+    <div class="container col-md-9 col-md-offset-2">
+        <h2>My Orders</h2>
+        <% orders.forEach(function (orders) {%>
+        <div class="panel-body">
+            <ul class="list-group">
+                <strong>
+                    <p><%=orders.createdAt.toDateString()%></p>
+                </strong>
+
+                <% orders.items.forEach(function (items) {%>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div class="col-3">
+                        <p><%=items.item.title%> </p>
+                        <p><img class="account-img" src="<%=items.item.image%>"></p>
+
+                    </div>
+                    <div class="prices">
+                        <p> <%=items.qty%></p>
+                        <span class="badge badge-dark"><%=items.price%></span>
+                    </div>
+                </li>
+                <%})%>
+            </ul>
+        </div>
+        <div class="panel-footer">
+            <strong>£ <%=orders.cart.totalPrice%></strong>
+        </div>
+        <hr>
+        <%})%>
+    </div>
+</div>
+
+
+<%include ../partials/footer%>

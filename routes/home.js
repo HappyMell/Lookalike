@@ -1,18 +1,38 @@
 var express = require("express");
 var router = express.Router();
 var Subscription = require("../models/subscribe");
-var Music = require("../models/music");
+var Discography = require("../models/discography");
+var News = require("../models/news");
 
 //Root Route
 router.get("/", function (req, res) {
-    res.render("home", {
-        page: "home"
+    News.find({}, function (err, docs) {
+        var newsChunks = [];
+        var chunkSize = 1;
+        for (var i = 0; i < docs.length; i += chunkSize) {
+            newsChunks.push(docs.slice(i, i + chunkSize))
+        }
+
+        res.render("home", {
+            page: "home",
+            news: newsChunks,
+        });
     });
 });
+
 //Discography
 router.get("/discography", function (req, res) {
-    res.render("discography", {
-        page: "discography"
+    Discography.find({}, function (err, album) {
+        var index = album.index;
+        var albumChunks = [];
+        var chunkSize = 3;
+        for (var i = 0; i < 6; i += chunkSize) {
+            albumChunks.push(album.slice(i, i + chunkSize))
+        }
+        res.render("discography", {
+            album: albumChunks,
+            index: index
+        })
     });
 });
 
@@ -23,21 +43,7 @@ router.get("/social-media", function (req, res) {
     });
 });
 
-//Store
-router.get("/store", function (req, res) {
-    res.render("store", {
-        page: "store"
-    })
-})
 
-//Store - Music
-router.get("/music", function (req, res) {
-    var music = Music.find();
-    res.render("music", {
-        page: "music",
-        music: music
-    })
-})
 
 //Social media and email subscription
 router.post("/social-media", function (req, res) {
@@ -54,5 +60,4 @@ router.post("/social-media", function (req, res) {
         }
     })
 })
-
 module.exports = router;

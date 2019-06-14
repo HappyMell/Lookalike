@@ -1,12 +1,31 @@
 /*  Nav Bar */
 
+aside {
+    width: 240px;
+    padding: 8px 0 0 22px;
+    top: 0px;
+    background: #FFF;
+    z-index: 9999999;
+}
+
+
+@media(min-width:575.98) and (min-width: 767.98) {
+    #nav {
+        height: 72px;
+        width: 100%;
+        padding: 8px 0 0 0px;
+        background: #FFF;
+        display: contents;
+    }
+}
+
 .nav-link {
     font-family: 'Source Sans Pro', sans-serif;
     text-transform: uppercase;
     transition: color 0.4s linear;
     -webkit-transition: color 0.4s linear;
     -moz-transition: color 0.4s linear;
-    color: black;
+    color: black !important;
     letter-spacing: 4px;
     font-size: 16px;
     -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
@@ -14,11 +33,22 @@
 
 }
 
-.flex-sm-column {
-    display: -webkit-inline-box !important;
+.nav-link:hover {
+    color: grey !important;
+}
+
+.navbar-collapse {
+    transition: height 1s, opacity 0.3s;
+}
+
+.active {
+    font-weight: bold;
 }
 
 
+.store {
+    float: left;
+}
 
 .crossStore {
     height: 12px;
@@ -43,23 +73,31 @@ ul {
 }
 
 .bandlogo {
-    margin-top: -30px;
-    margin-bottom: -30px;
+    margin-top: -22px;
+    margin-bottom: -13px;
     height: 100px;
-    width: 110px;
+    width: 133px;
 }
 
-.nav-link:hover {
+footer {
+    margin-top: 83px;
+}
+
+footer>a {
+    color: black;
+    text-decoration: none;
+
+
+}
+
+footer>a:hover {
     color: grey;
+    text-decoration: none;
 }
 
-.active {
-    font-weight: bold;
-}
 
-.fixed-top {
-    width: 50px;
-}
+
+
 
 @-webkit-keyframes rotate-90-ccw {
     0% {

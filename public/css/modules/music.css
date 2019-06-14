@@ -1,3 +1,7 @@
+.col-lg-9 {
+    margin-left: 48px !important;
+}
+
 #musicStatement {
     font-family: 'Source Sans Pro';
     text-transform: uppercase;

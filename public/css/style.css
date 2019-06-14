@@ -4,3 +4,8 @@
 @import "/modules/header";
 @import "/modules/news";
 @import "/modules/music";
+@import "/modules/register";
+@import "/modules/shopping-bag";
+@import "/modules/checkout";
+@import "/modules/account";
+@import "/modules/base";

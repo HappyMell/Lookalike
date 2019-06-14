@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Lookalike</title>
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet"> 
+  <script src="https://kit.fontawesome.com/9cf512b134.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+
 <link  rel = "stylesheet" href="/../css/finalstyle.css">
 </head>
 
 
-<body>
 
+<body>
 <div class="container-fluid">
 <div class="row">
 
-<nav class="navbar fixed-top navbar-light bg-light">
- <a class="navbar-brand" href="/">
-      <img class="bandlogo" src="/images/bandlogo.png"> </a>
-    <div class="nav flex-sm-column flex-row">
+<% header = typeof header !== 'object' ? {} : header %>
+
+  <aside id="nav" class="navbar-expand-lg navbar-light bg-light  align-items-start">
+     <a class="navbar-brand" href="/"> <img class="bandlogo" src="/images/bandlogo.png"> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+      </button>
+    <nav class=" collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav flex-lg-column  justify-content-between">
       <li class="nav-item <%= typeof page !== 'undefined' && page === 'home' ? 'active' : '' %>">
        <a class="nav-link" href="/">NEWS</a>
        </li>
@@ -26,32 +37,34 @@
         <a class="nav-link" href="/discography">DISCOGRAPHY</a>
         </li>
         <li class="nav-item <%= typeof page !== 'undefined' && page === 'live' ? 'active' : '' %>">
-        <a class="nav-link" href="/live">LIVE</a>
+        <a class="nav-link" href="#">LIVE</a>
         </li>      
         <li class="nav-item  <%= typeof page !== 'undefined' && page === 'store' ? 'active' : '' %>" >
-                
-                <a class="nav-link" href="/store">STORE</a>
-                </li>
-              
-                </li><img class="crossStore" src="images/cross.png" data-toggle="collapse" role="button" aria-expended="false" aria-controls="#storeCollapse" href="#storeCollapse" >
-                   
-                   <div class="collapse" id="storeCollapse">
-                   <ul>
-                   <li><a class="nav-link" href="/music">Music</a></li>
-                   <li><a class="nav-link" href="/clothing">Clothing</a></li>
-                   <li><a class="nav-link" href="/objects">Objects</a></li>
+        <a class="nav-link store" href="/store">STORE</a>
+        <%if (header.url == "/store" || header.url =="/music" || header.url=="/clothing" || header.url == "/objects") {%>
+                <img class="crossStore" src="images/cross.png" data-toggle="collapse" role="button" aria-expended="false" aria-controls="#storeCollapse" href="#storeCollapse" >
+                   </li>
+                   <div class="collapse show" id="storeCollapse">
+                      <ul>
+                        <li><a class="nav-link" href="/music">Music</a></li>
+                        <li><a class="nav-link" href="/clothing">Clothing</a></li>
+                        <li><a class="nav-link" href="/objects">Objects</a></li>
+                      </ul>
                    </div>
-                  </li>
-                </ul>
-
-                  <li class="nav-item <%= typeof page !== 'undefined' && page === 'follow' ? 'active' : '' %>">
-                    <a class="nav-link" href="/social-media">FOLLOW</a>
-                    </li>
-
-
-
-
+                    <%}%>
+                  
+        <li class="nav-item <%= typeof page !== 'undefined' && page === 'follow' ? 'active' : '' %>">
+        <a class="nav-link" href="/social-media">FOLLOW</a>
+        </li>
+        </ul>
 </nav>
-</div>
+</aside>
 
-<% include ../partials/storecollapse%>
+
+
+
+
+
+
+
+

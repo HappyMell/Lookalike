@@ -1,0 +1,83 @@
+<%include ../partials/store/storeheader%>
+
+<%include ../partials/header%>
+
+
+<%if (session.cart) {%>
+<div class="container newsContainer">
+<div class="shopping-bag">
+    <div class="row row1">
+
+        <div class="col-6">
+            <p class="price">Price</p>
+        </div>
+        <div class="col">
+            <p class="quantity">Quantity</p>
+
+        </div>
+        <div class="col">
+            <p class="total">Total</p>
+        </div>
+    </div>
+
+    <hr>
+
+
+    <div class="row">
+        <% product.forEach(function(product) { %>
+
+        <div class="col-4 image">
+            <img src="<%=product.item.image%>" class="product-img img-responsive">
+            <div class="title">
+                <p><%=product.item.title%></p>
+                <p><a href="/remove/<%=product.item._id%>" class="btn btn-dark" role="button">Remove</a></p>
+            </div>
+        </div>
+        <div class="col-2 product-price">
+            <p><%=product.singlePrice%></p>
+        </div>
+        <div class="col-3 product-qty">
+            <div class="buttons">
+                <a class="btn btn-outline-dark btn-sm" href="/reduce/<%=product.item._id%>" role="button">-</a>
+
+                <p><%=product.qty%></p>
+                <a class="btn btn-outline-dark btn-sm" href="/increase/<%=product.item._id%>" role="button">+</a>
+
+            </div>
+
+
+        </div>
+        <div class="col-3 product-total">
+            <p><%=product.price%></p>
+        </div>
+        <%})%>
+    </div>
+
+    <div class="row">
+        <div class="col-12 subtotal">
+            <p>Subtotal <%=totalPrice%></p>
+            <div class="col-4 shopping-button">
+                <a class="btn btn-outline-dark pull-right" role="button" href="/checkout"> Check Out</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<%} else {%>
+<div class="row">
+    <div class="container newsContainer">
+        <p>Your Bag is Currently Empty</p>
+        <p>Continue Browsing <a href="/store">Here</a></p>
+
+    </div>
+</div>
+<%} %>
+
+</div>
+
+
+
+<%include ../partials/footer%>

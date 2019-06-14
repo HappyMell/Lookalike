@@ -1,0 +1,20 @@
+.checkoutRow {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 4px;
+    font-size: 13px;
+}
+
+.checkout-img {
+    width: 40%;
+}
+
+.text-muted {
+    float: right;
+}
+
+button {
+    text-transform: uppercase;
+    border-radius: inherit !important;
+}

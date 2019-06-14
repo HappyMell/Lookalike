@@ -1,0 +1,56 @@
+<%include ../partials/store/storeheader%>
+
+<%include ../partials/header%>
+
+
+<div class="container newsContainer">
+    <div class="musicShopping">
+    <div id="musicStatement">
+        <p><strong>VINYL MISSION STATEMENT</strong></p>
+        <p class="musicParagraph">In these times of nearly unlimited access to all the music in the world,
+            we’ve come to appreciate the value and beauty of the physical object.
+            Our store’s focus is on presenting these items to you. Vinyl has returned to being a priority for us - not
+            just for the warmth of the sound,
+            but the interaction it demands from the listener. The canvas of artwork, the weight of the record, the smell
+            of the vinyl,
+            the dropping of the needle, the difficulty of skipping tracks, the changing of sides,
+            the secrets hidden within, and having a physical object that exists in the real world with you… all part of
+            the experience and magic.</p>
+    </div>
+
+    <% product.forEach(function(product) { %>
+    <div class="card-deck">
+        <% product.forEach(function(music) { %>
+        <div class="card">
+            <img src="<%= music.image %>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%=music.title%></h5>
+                <p class="card-text"><%=music.price%></p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-outline-dark pull-right" role="button" href="/music/add-to-cart/<%=music._id %>"> Add to Bag </a>
+                
+            </div>
+        </div>
+        <% }) %>
+
+
+
+    </div>
+    <%})%>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<%include ../partials/footer%>

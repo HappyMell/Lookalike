@@ -1,0 +1,79 @@
+.empty-bag>p>a {
+    color: black;
+    text-decoration: none;
+}
+
+.empty-bag>p>a:hover {
+    color: grey;
+}
+
+.price {
+    text-align: right;
+}
+
+.quantity {
+    text-align: center;
+}
+
+.total {
+    text-align: center;
+}
+
+.buttons {
+    display: ruby;
+}
+
+.buttons>a {
+    border-radius: inherit;
+}
+
+
+
+.product-price {
+    text-align: right;
+}
+
+.product-img {
+    max-width: 40% !important;
+    margin-bottom: 14px;
+    border: none;
+}
+
+.product-qty {
+    text-align: center;
+}
+
+.product-total {
+    text-align: center;
+}
+
+.subtotal {
+    text-align: right;
+}
+
+.title {
+    float: right;
+}
+
+.title>a {
+    color: black !important;
+    text-decoration: none;
+}
+
+.title>a:hover {
+    color: grey;
+}
+
+.title>p>a {
+    border-radius: inherit;
+}
+
+
+.shopping-button {
+    float: right;
+}
+
+.shopping-button>a {
+    margin-left: 13px;
+    border-radius: 0;
+}

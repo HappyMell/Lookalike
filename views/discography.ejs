@@ -1,58 +1,138 @@
 <%include partials/header%>
-<div class="col-lg-10 col-md-6">
+<div class="container  newsContainer ">
     <div id="accordion">
         <div class="line">
             <div id="headingOne">
                 <h5 class="mb-3">Band: main releases <button class="btn btn-link" data-toggle="collapse"
                         data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><img class="cross"
-                            src="images/cross.png"></button></h5>
+                            src="images/cross.png"></button>
+                            </h5>
             </div>
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <!---->
+                <div class="album  py-5 bg-light">
+                    <div class="container" id="containerDisc">
+                        <%album.forEach(function(album) {%>
+                        <div class="row d-flex" id="row1">
+                            <%album.forEach(function(albumInfo, index) {%>
+                            <div class="col-md-4  py-2">
+                                <div class="card">
+                                    <div class="img__wrap">
+                                        <img class="img__img" src="<%=albumInfo.image%>">
+                                        <div class="img__description_layer">
+                                            <a class="info img__description" href="#detail<%=albumInfo._id%>" data-toggle="collapse">
+                                                <p><%=albumInfo.title%></p>
+                                        </div>
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class=" order-md-last collapse fade" id="detail<%=albumInfo._id%>">
+                                <div class="card" id="card-<%=index%>">
+                                    <div class="albumDetails">
+                                        <img src="<%=albumInfo.image%>" class="img-fluid">
+                                          <div class=" albumtrack">
+                                           
+                                            <div class="albumtrackdetails">
+                                             <p class="albumtitle"><strong><%=albumInfo.title%></strong></p>
+                                            <p><%=albumInfo.description%></p>
+                                            <p>Tracklist + </p>
+                                            <ol>
+                                                <li>Yes</li>
+                                                <li>No</li>
+                                                <li>idk</li>
+                                                <li>Can you repeat the question?</li>
+                                            </ol>
+                                            <p> MORE INFO: <a href="#">band wiki</a></p>
 
-               <%include partials/disc/mainreleases%>
-            </div>
-            <div class="line">
-                <div id="headingTwo">
-                    <h5 class="mb-3">Band: Singles / Eps / Live <button class="btn btn-link collapsed"
-                            data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                            aria-controls="collapseTwo"><img class="cross" src="images/cross.png"></button></h5>
-                </div>
-                <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordion">
-                    <%include partials/disc/singles%>
-                </div>
-            </div>
-            <div class="line">
-                <div id="headingThree">
-                    <h5 class="mb-3">Film work <button class="btn btn-link collapsed" data-toggle="collapse"
-                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><img
-                                class="cross" src="images/cross.png"></button></h5>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                    <%include partials/disc/films%>
-                </div>
-            </div>
-            <div class="line">
-                <div id="headingFour">
-                    <h5 class="mb-3">Miscellaneous <button class="btn btn-link collapsed" data-toggle="collapse"
-                            data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"><img
-                                class="cross" src="images/cross.png"></button></h5>
-                </div>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                   <%include partials/disc/misc%>
-                </div>
-            </div>
-            <div class="line">
-                <div id="headingFive">
-                    <h5 class="mb-3">Band: Family <button class="btn btn-link collapsed" data-toggle="collapse"
-                            data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"><img
-                                class="cross" src="images/cross.png"></button></h5>
-                </div>
-                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                    <%include partials/disc/family%>
+                                            <p>BUY FROM: <a href="#">Band Store</a>|<a href="#">iTunes</a>|<a
+                                                    href="#">Amazon</a></p>
+                                            <p>PLAY: <a href="#">Spotify</a>|<a href="#">Apple Music</a></p>
+                                            </div>
+                                        </div>
+                                   </div>
+                                </div>
+                            </div>
+                            <%})%>
+                        </div>
+                        <%})%>
+                    </div>
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+        <div class="line">
+            <div id="headingTwo">
+                <h5 class="mb-3">Band: Singles / Eps / Live <button class="btn btn-link collapsed"
+                        data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo"><img class="cross" src="images/cross.png"></button></h5>
+            </div>
+            <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordion">
+                <!---->
+
+                <div class="album py-5 bg-light">
+                    <div class="container" id="containerDisc">
+                        <%album.forEach(function(album, index) {%>
+                        <div class="row d-flex" id="row1">
+                            <%album.forEach(function(albumInfo) {%>
+                            <div class="col-md-4 py-2">
+                                <div class="card">
+                                    <div class="hovereffect">
+                                        <img class="img-responsive" src="<%=albumInfo.image%>">
+                                        <div class="overlay">
+                                            <a class="info" href="#detail<%=albumInfo._id%>" data-toggle="collapse">
+                                                <h2><%=albumInfo.title%></h2>
+                                        </div>
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col py-2 order-md-last collapse fade" id="detail<%=albumInfo._id%>">
+                                <div class="card">
+                                    <div class="albumDetails" id="card-<%=index%>">
+                                        <img src="<%=albumInfo.image%>">
+                                        <div class="albumtrack">
+                                            <p class="albumtitle"><strong><%=albumInfo.title%></strong></p>
+                                            <p><%=albumInfo.description%></p>
+                                            <p>Tracklist + </p>
+                                            <ol>
+                                                <li>Yes</li>
+                                                <li>No</li>
+                                                <li>idk</li>
+                                                <li>Can you repeat the question?</li>
+                                            </ol>
+                                            <p> MORE INFO: <a href="#">band wiki</a></p>
+
+                                            <p>BUY FROM: <a href="#">Band Store</a>|<a href="#">iTunes</a>|<a
+                                                    href="#">Amazon</a></p>
+                                            <p>PLAY: <a href="#">Spotify</a>|<a href="#">Apple Music</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <%})%>
+                        </div>
+                        <%})%>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
+
 </div>
-</div><%include partials/smallscroll%>
+</div>
+</div>
+
+
+</div>
+
+
+
 <%include partials/footer%>

@@ -1,0 +1,29 @@
+<%include ../partials/store/storeheader%>
+
+<%include ../partials/header%>
+
+<div class="container newsContainer">
+ <% product.forEach(function(product) { %>
+    <div class="card-deck">
+        <% product.forEach(function(clothing) { %>
+        <div class="card">
+            <img src="<%= clothing.image%>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%=clothing.title%></h5>
+                <p class="card-text"><%=clothing.price%></p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-outline-dark pull-right" role="button" href="/clothing/add-to-cart/<%=clothing._id %>"> Add to Bag </a>
+                
+            </div>
+        </div>
+        <% }) %>
+
+
+
+    </div>
+    <%})%>
+</div>
+</div>
+
+<%include ../partials/footer%>

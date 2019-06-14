@@ -1,8 +1,17 @@
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white ">
+<div class="d-flex flex-column flex-md-row align-items-center p-2 px-md-4 mb-3 bg-white ">
       <h5 class="my-0 mr-md-auto font-weight-normal"></h5>
       <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Login</a> or
-        <a class="p-2 text-dark" href="#">Create Account</a>
-        <a class="p-2 text-dark shoppingBag" href="#">Shopping Bag</a>
+      <% if(!currentUser) {%>
+        <a class="p-2 text-dark" href="/login">Login</a></li> |
+       <a class="p-2 text-dark" href="/register">Create Account</a></li>
+        <%} else { %>
+        <a href="/account" class="p-2 text-dark">My Account</a></li>
+       <a href="/logout" class="p-2 text-dark">Logout</a></li>
+        <%}%>
+        <a class="p-2 text-dark shoppingBag" href="/shopping-bag">Shopping Bag
+          <% if(session.cart) {%>
+          <span class="badge badge-dark"><%=session.cart.totalQty%></span>
+          <%}%>
+        </a>
       </nav>
     </div>
