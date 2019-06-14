@@ -47,7 +47,7 @@ app.use(bodyParser.urlencoded({
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
-app.use(expess.static(__dirname + "/public/css"));
+app.use(express.static(__dirname + "/public/css"));
 
 
 // Validator Config
