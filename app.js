@@ -13,7 +13,7 @@ var flash = require("connect-flash");
 var validator = require("express-validator");
 var session = require("express-session");
 var MongoStore = require("connect-mongo")(session);
-
+require('dotenv').config();
 
 var User = require("./models/user");
 
@@ -25,8 +25,16 @@ var userRoute = require("./routes/user");
 var storeRoute = require("./routes/store");
 
 //Mongoose config
-mongoose.connect("mongodb://localhost:27017/lookalike", {
-    useNewUrlParser: true
+
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/lookalike"
+
+mongoose.connect(url, {
+    useNewUrlParser: true,
+    useCreateIndex: true
+}).then(() => {
+    console.log('Connected to DB');
+}).catch(err => {
+    console.log('Error:', err.message);
 });
 
 //Import Passport File
