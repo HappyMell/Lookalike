@@ -99,7 +99,7 @@ app.use(function (req, res, next) {
 
 
 //Post CSS config
-var css = fs.readFileSync("../public/css/style.css", "utf8");
+var css = fs.readFileSync("public/css/style.css", "utf8");
 
 postcss()
     .use(atImport())
