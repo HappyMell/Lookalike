@@ -5,15 +5,18 @@
     margin-top: 131px;
 }
 
+@media(min-width: 990.98px) and (max-width: 1686.98px) {
+    .newsContainer {
+        width: 755px;
+    }
+}
+
 .container {
     max-width: 1453px !important;
 }
 
-@media(min-width:1400) {
-    .newsContainer {
-        margin-left: 115px;
-    }
-}
+
+
 
 img {
     width: 100%;

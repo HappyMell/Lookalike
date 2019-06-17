@@ -3,13 +3,13 @@
 <% include ../partials/header%>
 
 
- <div class="container newsContainer" id="register">
- 
-    <form class="form-signin" action="/register" method="POST">
+<div class="container newsContainer" id="register">
+
+  <form class="form-signin" action="/register" method="POST">
     <% if (hasErrors) { %>
-      <div class="alert alert-danger">
+    <div class="alert alert-danger">
       <p><%= messages %></p>
-      </div>
+    </div>
     <%}%>
   
   <label for="inputEmail" class="sr-only">Email address</label>
@@ -24,7 +24,7 @@
  <p><a href="/store">Return to store</a></p>
  </div> 
 <input type="hidden" name="_csrf" value="<%= csrfToken%>">
-</form>
+  </form>
 </div>
 
 

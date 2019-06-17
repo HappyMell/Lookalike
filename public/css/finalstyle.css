@@ -216,20 +216,32 @@ aside {
     width: 240px;
     padding: 8px 0 0 22px;
     top: 0px;
-    background: #FFF;
     z-index: 9999999;
 }
 
 
 
-@media(min-width:575.98) and (min-width: 767.98) {
-    #nav {
-        height: 72px;
+@media (max-width: 991.98px) {
+    aside {
         width: 100%;
-        padding: 8px 0 0 0px;
-        background: #FFF;
-        display: contents;
+        padding: 8px 0 0 22px;
+        top: 0px;
+        z-index: 9999999;
     }
+}
+
+
+
+@media (max-width: 991.98px) {
+    .navbar-toggler {
+        float: inline-end;
+    }
+}
+
+
+
+.bg-light {
+    background-color: #FFF !important;
 }
 
 
@@ -372,16 +384,16 @@ footer>a:hover {
 
 
 
-.container {
-    max-width: 1453px !important;
+@media(min-width: 990.98px) and (max-width: 1686.98px) {
+    .newsContainer {
+        width: 755px;
+    }
 }
 
 
 
-@media(min-width:1400) {
-    .newsContainer {
-        margin-left: 115px;
-    }
+.container {
+    max-width: 1453px !important;
 }
 
 
@@ -841,6 +853,7 @@ body {
     color: black;
     letter-spacing: 4px;
     font-size: 16px;
+    background-color: #FFF;
 }
 
 
